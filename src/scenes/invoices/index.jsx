@@ -1,6 +1,5 @@
-import React from "react";
 import { Box, Typography, useTheme } from "@mui/material";
-import { DataGrid, GridToolbar } from "@mui/x-data-grid";
+import { DataGrid } from "@mui/x-data-grid";
 import { tokens } from "../../theme";
 import { mockDataInvoices } from "../../data/mockData";
 import Header from "../../components/Header";
@@ -8,9 +7,8 @@ import Header from "../../components/Header";
 const Invoices = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
-
   const columns = [
-    { field: "id", headerName: "ID"},
+    { field: "id", headerName: "ID" },
     {
       field: "name",
       headerName: "Name",
@@ -35,7 +33,7 @@ const Invoices = () => {
         <Typography color={colors.greenAccent[500]}>
           ${params.row.cost}
         </Typography>
-      )
+      ),
     },
     {
       field: "date",
@@ -46,10 +44,7 @@ const Invoices = () => {
 
   return (
     <Box m="20px">
-      <Header
-        title="INVOICES"
-        subtitle="List of Invoices Balances"
-      />
+      <Header title="INVOICES" subtitle="List of Invoice Balances" />
       <Box
         m="40px 0 0 0"
         height="75vh"
@@ -63,7 +58,7 @@ const Invoices = () => {
           "& .name-column--cell": {
             color: colors.greenAccent[300],
           },
-          "& .MuiDataGrid-columnHeader": {
+          "& .MuiDataGrid-columnHeaders": {
             backgroundColor: colors.blueAccent[700],
             borderBottom: "none",
           },
@@ -74,16 +69,12 @@ const Invoices = () => {
             borderTop: "none",
             backgroundColor: colors.blueAccent[700],
           },
-          "& .MuiCheckBox-root": {
-            color: `${colors.grey[200]} !important`,
+          "& .MuiCheckbox-root": {
+            color: `${colors.greenAccent[200]} !important`,
           },
         }}
       >
-        <DataGrid
-          checkboxSelection
-          rows={mockDataInvoices}
-          columns={columns}
-        />
+        <DataGrid checkboxSelection rows={mockDataInvoices} columns={columns} />
       </Box>
     </Box>
   );

@@ -1,4 +1,3 @@
-import React from "react";
 import { Box } from "@mui/material";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { tokens } from "../../theme";
@@ -48,7 +47,7 @@ const Contacts = () => {
     },
     {
       field: "zipCode",
-      headerName: "ZipCode",
+      headerName: "Zip Code",
       flex: 1,
     },
   ];
@@ -57,7 +56,7 @@ const Contacts = () => {
     <Box m="20px">
       <Header
         title="CONTACTS"
-        subtitle="The list of COntacts for the Future Reference"
+        subtitle="List of Contacts for Future Reference"
       />
       <Box
         m="40px 0 0 0"
@@ -72,7 +71,7 @@ const Contacts = () => {
           "& .name-column--cell": {
             color: colors.greenAccent[300],
           },
-          "& .MuiDataGrid-columnHeader": {
+          "& .MuiDataGrid-columnHeaders": {
             backgroundColor: colors.blueAccent[700],
             borderBottom: "none",
           },
@@ -83,6 +82,9 @@ const Contacts = () => {
             borderTop: "none",
             backgroundColor: colors.blueAccent[700],
           },
+          "& .MuiCheckbox-root": {
+            color: `${colors.greenAccent[200]} !important`,
+          },
           "& .MuiDataGrid-toolbarContainer .MuiButton-text": {
             color: `${colors.grey[100]} !important`,
           },
@@ -91,7 +93,7 @@ const Contacts = () => {
         <DataGrid
           rows={mockDataContacts}
           columns={columns}
-          slots={{ toolbar: GridToolbar }}
+          components={{ Toolbar: GridToolbar }}
         />
       </Box>
     </Box>
