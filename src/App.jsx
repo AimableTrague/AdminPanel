@@ -15,7 +15,8 @@ import Bar from './scenes/bar/index'
 import Line from './scenes/line/index'
 import Geography from './scenes/geography'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
+import PageTitleUpdater from './scenes/TitleUpdater/TitleUpdater'
+import { Analytics } from "@vercel/analytics/react"
 
 function App() {
   const [theme, colorMode] = useMode()
@@ -24,6 +25,8 @@ function App() {
   return (
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
+        <PageTitleUpdater />
+        <Analytics />
         <CssBaseline />
         <div className="app">
           <SideBar />

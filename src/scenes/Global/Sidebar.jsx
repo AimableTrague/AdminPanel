@@ -80,8 +80,8 @@ const Sidebar = () => {
                 alignItems="center"
                 ml="15px"
               >
-                <Typography variant="h3" color={colors.grey[100]}>
-                  ADMIN PANEL
+                <Typography fontWeight="bold" variant="h3" color={colors.grey[100]}>
+                  MALOS CORE
                 </Typography>
                 <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
                   <MenuOutlinedIcon />
