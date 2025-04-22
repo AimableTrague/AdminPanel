@@ -1,6 +1,6 @@
 import { useState } from "react";
 import FullCalendar from "@fullcalendar/react";
-import { formatDate } from '@fullcalendar/core';
+import { formatDate } from "@fullcalendar/core";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
@@ -70,16 +70,16 @@ function Calendar() {
                 }}
               >
                 <ListItemText
-                    primary={event.title}
-                    secondary={
-                        <Typography>
-                            {formatDate(event.start, {
-                                year: "numeric",
-                                month: "short",
-                                day: "numeric"
-                            })}
-                        </Typography>
-                    }
+                  primary={event.title}
+                  secondary={
+                    <Typography>
+                      {formatDate(event.start, {
+                        year: "numeric",
+                        month: "short",
+                        day: "numeric",
+                      })}
+                    </Typography>
+                  }
                 />
               </ListItem>
             ))}
@@ -88,32 +88,32 @@ function Calendar() {
 
         {/* CALENDAR */}
         <Box flex="1 1 100%" ml="15px">
-            <FullCalendar
-              height="75vh"
-              plugins={[
-                  dayGridPlugin,
-                  timeGridPlugin,
-                  interactionPlugin,
-                  listPlugin
-              ]}
-              headerToolbar={{
-                  left: "prev, next, today",
-                  center: "title",
-                  right: "dayGridMonth,timeGridWeek,timeGridDay,listMonth"
-              }}
-              initialView="dayGridMonth"
-              editable={true}
-              selectable={true}
-              selectMirror={true}
-              dayMaxEventRows={true}
-              select={handleDateClick}
-              eventClick={handleEventClick}
-              eventsSet={(events) => setCurrentEvents(events)}
-              initialEvents={[
-                  { id: "1234",title:"All-day event", date: "2025-01-14"},
-                  { id: "4134", title:"All-day event", date: "2025-01-16"},
-              ]}
-            />
+          <FullCalendar
+            height="75vh"
+            plugins={[
+              dayGridPlugin,
+              timeGridPlugin,
+              interactionPlugin,
+              listPlugin,
+            ]}
+            headerToolbar={{
+              left: "prev, next, today",
+              center: "title",
+              right: "dayGridMonth,timeGridWeek,timeGridDay,listMonth",
+            }}
+            initialView="dayGridMonth"
+            editable={true}
+            selectable={true}
+            selectMirror={true}
+            dayMaxEventRows={true}
+            select={handleDateClick}
+            eventClick={handleEventClick}
+            eventsSet={(events) => setCurrentEvents(events)}
+            initialEvents={[
+              { id: "1234", title: "All-day event", date: "2025-01-14" },
+              { id: "4134", title: "All-day event", date: "2025-01-16" },
+            ]}
+          />
         </Box>
       </Box>
     </Box>
